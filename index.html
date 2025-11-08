@@ -4,7 +4,19 @@
   <title>Anime Test</title>
 </head>
 <body>
-  <h1>Anime Test</h1>
+    <h1>Anime Explorer</h1>
+
+  <!-- Search input -->
+  <input type="text" id="searchInput" placeholder="Search anime...">
+  <button id="searchBtn">Search</button>
+
+
+
+
+
+
+  <!-- Container for results -->
+  <div id="results"></div>
   <div id="results"></div>
   <script>
     fetch('https://api.jikan.moe/v4/anime?q=Naruto')
