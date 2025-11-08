@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Anime Test</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anime Explorer</title>
   <link rel="stylesheet" href="styles.css" />
-</head> 
+</head>
+
 <body>
-    <h1>Anime Explorer</h1>
-<script src="java.js"></script>
-<script src="java1.js"></script>
+  <h1>🎬 Anime Explorer</h1>
+
   <!-- Search input -->
   <div class="search-section">
     <input type="text" id="searchInput" placeholder="Search anime..." />
@@ -21,18 +23,19 @@
       <option value="airing">Daily (Airing)</option>
       <option value="upcoming">Weekly (Upcoming)</option>
       <option value="bypopularity">Monthly (Popular)</option>
+      <option value="all">All Time</option>
     </select>
   </div>
 
+  <!-- Results container -->
+  <div id="results"></div>
+  <h2 recent-searches>Recent Searches:</h2>
+  <div id="recentAnimes"></div>
+  
 
 
-
-
-  <!-- Container for results -->
-    <h2>Top Anime</h2>
-  <div id="top10"></div>
-  <h2>Recently Added Anime</h2>
-  <div id="recentAnime"></div>
-
+  <!-- Scripts should be loaded LAST -->
+  <script src="java.js"></script>
+  <script src="java1.js"></script>
 </body>
 </html>
