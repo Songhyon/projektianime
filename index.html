@@ -8,16 +8,22 @@
     <h1>Anime Explorer</h1>
 
   <!-- Search input -->
-  <input type="text" id="searchInput" placeholder="Search anime...">
-  <button id="searchBtn">Search</button>
+  <div class="search-section">
+    <input type="text" id="searchInput" placeholder="Search anime..." />
+    <button id="searchBtn">Search</button>
+  </div>
 
+  <!-- Dropdown for top anime -->
+  <div class="top-section">
+    <label for="rankingSelect">Show top anime: </label>
+    <select id="rankingSelect">
+      <option value="airing">Daily (Airing)</option>
+      <option value="upcoming">Weekly (Upcoming)</option>
+      <option value="bypopularity">Monthly (Popular)</option>
+    </select>
+  </div>
 
-
-
-
-
-  <!-- Container for results -->
-  <div id="top10"></div>
-  <div id="upanime"></div>
+  <!-- Results container -->
+  <div id="results"></div>
 </body>
 </html>
