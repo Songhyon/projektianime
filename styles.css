@@ -63,7 +63,7 @@ button:hover {
   }
 .anime-card:hover {
     transform: translateY(-10px);
-    zoom : 1.05;
+    zoom : 0,9;
     }
 
 .anime-card img {
