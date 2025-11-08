@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <img src="${anime.images.jpg.image_url}" alt="${anime.title} poster" width="150">
                     <p>Episodes: ${anime.episodes || 'N/A'}</p>
                     <p>Score: ${anime.score || 'N/A'}</p>
-                    <p class="synopsis">${anime.synopsis ? anime.synopsis : 'No synopsis available.'}</p>
+                    <p>${anime.synopsis ? anime.synopsis.slice(0, 120) + "..." : "No description available."}</p>
                 `;
 
 
