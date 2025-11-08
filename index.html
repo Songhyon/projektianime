@@ -2,15 +2,28 @@
 <html>
 <head>
   <title>Anime Test</title>
+  <link rel="stylesheet" href="styles.css" />
 </head> 
 <body>
     <h1>Anime Explorer</h1>
 
   <!-- Search input -->
-  <input type="text" id="searchInput" placeholder="Search anime...">
-  <button id="searchBtn">Search</button>
+  <div class="search-section">
+    <input type="text" id="searchInput" placeholder="Search anime..." />
+    <button id="searchBtn">Search</button>
+  </div>
 
+  <!-- Dropdown for top anime -->
+  <div class="top-section">
+    <label for="rankingSelect">Show top anime: </label>
+    <select id="rankingSelect">
+      <option value="airing">Daily (Airing)</option>
+      <option value="upcoming">Weekly (Upcoming)</option>
+      <option value="bypopularity">Monthly (Popular)</option>
+    </select>
+  </div>
 
+<<<<<<< HEAD
 
 
 
@@ -23,5 +36,9 @@
 
 <script src="java.js"></script>
 <script src="java1.js"></script>
+=======
+  <!-- Results container -->
+  <div id="results"></div>
+>>>>>>> afb9995c4f0a0cbaeb0603d33988e99a77fedf0a
 </body>
 </html>
