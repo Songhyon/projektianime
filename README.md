@@ -42,12 +42,11 @@
 
 ## 📑 Sisällysluettelo
 1. [Tietoja sovelluksesta](#tietoja-sovelluksesta)  
-2. [Tunnetut virheet/bugit](#tunnetut-virheetbugit)  
-3. [Teknologiat](#teknologiat)  
-4. [Asennus](#asennus)  
-5. [Lähestymistapa](#lähestymistapa)  
-6. [Kiitokset](#kiitokset)  
-7. [Lisenssi](#lisenssi)  
+2. [Teknologiat](#teknologiat)  
+3. [Asennus](#asennus)  
+4. [Lähestymistapa](#lähestymistapa)  
+5. [Kiitokset](#kiitokset)  
+6. [Lisenssi](#lisenssi)  
 
 ---
 
@@ -61,13 +60,6 @@
 - Anime-esikatselumodaali yksityiskohtaisia tietoja varten.  
 - Sidebar top 5 animeille aikavälin mukaan.  
 - Responsiivinen ja moderni tummateemainen ulkoasu.  
-
----
-
-## ⚠ Tunnetut virheet/bugit
-- Modal ei aina päivity heti uuden animekortin lisäämisen jälkeen.  
-- Pieniä visuaalisia ongelmia mobiilinäytöillä.  
-- API:n hidastuminen voi aiheuttaa viivettä tulosten latauksessa.  
 
 ---
 
