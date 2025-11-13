@@ -85,3 +85,63 @@ button:hover {
   text-decoration: none;
   border-radius: 6px;
 }
+
+/* Layout */
+.layout {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+/* Main content (left side) */
+.main-content {
+  flex: 3;
+}
+
+/* Sidebar (right side) */
+.sidebar {
+  flex: 1;
+  background-color: #222;
+  padding: 15px;
+  border-radius: 12px;
+  margin-left: 20px;
+  max-width: 300px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+/* Sidebar heading */
+.sidebar h2 {
+  text-align: center;
+  color: #ff0066;
+  margin-bottom: 15px;
+}
+
+/* Sidebar anime cards */
+.sidebar-card {
+  display: flex;
+  align-items: center;
+  background-color: #2e2e2e;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  padding: 8px;
+  transition: transform 0.2s;
+}
+
+.sidebar-card:hover {
+  transform: translateX(5px);
+}
+
+.sidebar-card img {
+  width: 50px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-right: 10px;
+}
+
+.sidebar-card h4 {
+  font-size: 0.9em;
+  color: #fff;
+}
+
