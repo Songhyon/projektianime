@@ -21,8 +21,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 `;
 
 
+
+
                 recentContainer.appendChild(animeDiv);
             });
         })
         .catch(error => console.error('Error fetching recent anime:', error));
 });
+
