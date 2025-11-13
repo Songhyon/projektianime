@@ -34,39 +34,38 @@
 
       <h2>Recent Anime</h2>
       <div id="recentAnime"></div>
+      <!-- Pagination buttons will be dynamically inserted here by JS -->
+
     </div>
 
-   <!-- RIGHT SIDE (Sidebar) -->
-<aside class="sidebar">
-  <h2>🔥 Top 5 Anime</h2>
-  <div class="sidebar-filter">
-    <label for="sidebarSelect">Filter: </label>
-    <select id="sidebarSelect">
-      <option value="airing">Today</option>
-      <option value="upcoming">Weekly</option>
-      <option value="bypopularity">Monthly</option>
-      <option value="all">All Time</option>
-    </select>
+    <!-- RIGHT SIDE (Sidebar) -->
+    <aside class="sidebar">
+      <h2>🔥 Top 5 Anime</h2>
+      <div class="sidebar-filter">
+        <label for="sidebarSelect">Filter: </label>
+        <select id="sidebarSelect">
+          <option value="airing">Today</option>
+          <option value="upcoming">Weekly</option>
+          <option value="bypopularity">Monthly</option>
+          <option value="all">All Time</option>
+        </select>
+      </div>
+      <div id="sidebarTopAnime"></div>
+    </aside>
   </div>
-  <div id="sidebarTopAnime"></div>
-</aside>
 
-
-<!-- Preview Modal -->
-<div id="previewModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <div id="modalBody">Loading...</div>
+  <!-- Preview Modal -->
+  <div id="previewModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="modalBody">Loading...</div>
+    </div>
   </div>
-</div>
 
-<!-- Scripts -->
-<script src="java.js"></script>
-<script src="java1.js"></script>
-<script src="sidebar.js"></script>
-<script src="preview.js"></script>
-</body>
-</html>
-
+  <!-- Scripts -->
+  <script src="java.js"></script>
+  <script src="java1.js"></script>
+  <script src="sidebar.js"></script>
+  <script src="preview.js"></script>
 </body>
 </html>
