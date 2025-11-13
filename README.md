@@ -1,88 +1,84 @@
 🎬 Anime Explorer
 
-Anime Explorer is a web application that allows users to search, browse, and explore anime. It provides top anime lists, recent seasonal anime with pagination, and detailed previews via a modal.
+Anime Explorer on verkkosovellus, jonka avulla käyttäjät voivat etsiä, selata ja tutkia animeja. Sovellus näyttää top-anime-listoja, kauden uusimmat animet sivutettuna ja yksityiskohtaiset esikatselut modaalissa.
 
-🌟 Features
+🌟 Ominaisuudet
 
-Search anime by title with real-time results.
+Animehaku nimellä ja reaaliaikaisilla tuloksilla.
 
-Top anime lists filtered by Airing, Upcoming, or Popularity.
+Top-anime-listat, suodatettavissa Airing, Upcoming tai Popularity.
 
-Recent seasonal anime with pagination (Next/Prev pages).
+Kauden uusimmat animet sivutettuna (Seuraava/Edellinen sivu).
 
-Anime preview modal showing detailed information.
+Anime-esikatselumodaali yksityiskohtaisille tiedoille.
 
-Sidebar with top 5 anime filtered by timeframe.
+Sidebar top 5 animeille aikavälin mukaan.
 
-Fully responsive design with a clean dark theme.
+Täysin responsiivinen ja moderni tummateemainen design.
 
 🖥️ Demo
 
 
-(Replace with actual screenshot or GIF if available)
+(Korvaa oikealla kuvakaappauksella tai GIFillä)
 
-🛠️ Technologies Used
+🛠️ Käytetyt teknologiat
 
-HTML5 – Structure of the webpage.
+HTML5 – Sivun rakenne.
 
-CSS3 – Clean, modern, and responsive styling.
+CSS3 – Tyylit ja responsiivisuus.
 
-JavaScript (Vanilla) – Fetching data, dynamic rendering, and pagination.
+JavaScript (Vanilla) – Datan haku, dynaaminen renderöinti ja sivutus.
 
 Jikan API
- – Anime data from MyAnimeList.
+ – Anime-data MyAnimeListista.
 
-🚀 Getting Started
-1. Clone the repository
-git clone https://github.com/yourusername/anime-explorer.git
+🚀 Käyttöönotto
+1. Lataa repositorio
+git clone https://github.com/kayttaja/anime-explorer.git
 cd anime-explorer
 
-2. Open the project
+2. Avaa projekti
 
-Open index.html in your favorite browser.
+Avaa index.html selaimessasi.
 
-3. Explore
+3. Käytä sovellusta
 
-Use the search bar to find anime by title.
+Käytä hakupalkkia animejen etsimiseen.
 
-Use the dropdowns to see top anime.
+Käytä pudotusvalikkoja top-animejen katseluun.
 
-Scroll through Recent Anime and click Next/Prev to navigate pages.
+Selaa Recent Anime -osiota ja käytä Next/Prev sivuja.
 
-Click Show More on any anime card to open a preview modal.
+Klikkaa Show More -painiketta nähdäksesi yksityiskohtaisen esikatselun.
 
-📂 File Structure
+📂 Tiedostorakenne
 anime-explorer/
 │
-├─ index.html          # Main HTML file
-├─ styles.css          # All CSS styling
-├─ java.js             # Main JavaScript for search & top anime
-├─ java1.js            # JavaScript for recent anime pagination
-├─ sidebar.js          # Sidebar top anime filter
-├─ preview.js          # Modal preview logic
-└─ README.md           # Project documentation
+├─ index.html          # Pää HTML-tiedosto
+├─ styles.css          # Kaikki CSS-tyylit
+├─ java.js             # Pää JavaScript hakuun & top animeen
+├─ java1.js            # Recent anime ja sivutus
+├─ sidebar.js          # Sidebar top anime -suodatin
+├─ preview.js          # Modal-esikatselu
+└─ README.md           # Projekti-dokumentaatio
 
-🔧 Customization
+🔧 Muokattavuus
 
-Change season/year for recent anime in java1.js:
+Vaihda kausi/vuosi uusimmille animeille java1.js tiedostossa:
 
 fetch(`https://api.jikan.moe/v4/seasons/2025/fall?page=${page}&limit=${perPage}`)
 
 
-Adjust number of anime per page with perPage variable.
+Muuta animejen määrä per sivu muuttujalla perPage.
 
-Modify theme colors in styles.css under :root variables.
+Muokkaa teeman värejä styles.css tiedostossa :root muuttujien avulla.
 
-⚡ Future Improvements
+⚡ Tulevat parannukset
 
-Add numbered pagination buttons for direct page jumps.
+Lisää numeroidut sivunapit suoraan sivun valitsemiseen.
 
-Add favorites list with local storage.
+Lisää suosikkilista paikalliseen tallennukseen.
 
-Include sorting options (score, episodes, etc.).
+Mahdollisuus lajitella esim. score, episodes.
 
-Implement lazy loading images for better performance.
-
-📄 License
-
-This project is open-source and free to use.
+Kuvien lazy loading suorituskyvyn parantamiseksi.
