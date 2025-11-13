@@ -9,32 +9,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Handle dropdown change
   rankingSelect.addEventListener("change", (e) => {
-    const filter = e.target.value;
-    fetchTopAnime(filter);
+    fetchTopAnime(e.target.value);
   });
 
   // Handle search button click
   searchBtn.addEventListener("click", () => {
     const query = searchInput.value.trim();
-    if (query) {
-      fetchSearchResults(query);
-    }
+    if (query) fetchSearchResults(query);
   });
 
   // Fetch top anime (Daily, Weekly, Monthly)
   function fetchTopAnime(filterType) {
-    const url = `https://api.jikan.moe/v4/top/anime?filter=${filterType}&limit=10`;
-
     resultsDiv.innerHTML = `<p>Loading top anime...</p>`;
 
-    fetch(url)
+    fetch(`https://api.jikan.moe/v4/top/anime?filter=${filterType}&limit=10`)
       .then((res) => res.json())
       .then((data) => {
-        if (data && data.data) {
-          displayResults(data.data);
-        } else {
-          resultsDiv.innerHTML = "<p>No results found.</p>";
-        }
+        if (data && data.data) displayResults(data.data);
+        else resultsDiv.innerHTML = "<p>No results found.</p>";
       })
       .catch((err) => {
         console.error("Error fetching top anime:", err);
@@ -44,18 +36,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Search anime by title
   function fetchSearchResults(query) {
-    const url = `https://api.jikan.moe/v4/anime?q=${encodeURIComponent(query)}&limit=10`;
-
     resultsDiv.innerHTML = `<p>Searching for "${query}"...</p>`;
 
-    fetch(url)
+    fetch(`https://api.jikan.moe/v4/anime?q=${encodeURIComponent(query)}&limit=10`)
       .then((res) => res.json())
       .then((data) => {
-        if (data && data.data.length > 0) {
-          displayResults(data.data);
-        } else {
-          resultsDiv.innerHTML = "<p>No results found.</p>";
-        }
+        if (data && data.data.length > 0) displayResults(data.data);
+        else resultsDiv.innerHTML = "<p>No results found.</p>";
       })
       .catch((err) => {
         console.error("Error searching anime:", err);
@@ -63,21 +50,34 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
 
-  // Display anime cards
+  // Display anime cards with Show More button
   function displayResults(animeList) {
     resultsDiv.innerHTML = "";
     animeList.forEach((anime) => {
       const card = document.createElement("div");
       card.classList.add("anime-card");
+      card.dataset.id = anime.mal_id; // store MAL ID for modal
       card.innerHTML = `
         <img src="${anime.images.jpg.image_url}" alt="${anime.title}" />
         <h3>${anime.title}</h3>
         <p><strong>Score:</strong> ${anime.score ?? "N/A"}</p>
         <p>${anime.synopsis ? anime.synopsis.slice(0, 120) + "..." : "No description available."}</p>
+        <button class="show-more-btn">Show More</button>
       `;
       resultsDiv.appendChild(card);
     });
   }
+
+  // Event delegation for Show More buttons
+  document.body.addEventListener("click", (e) => {
+    if (e.target.classList.contains("show-more-btn")) {
+      const card = e.target.closest(".anime-card");
+      const animeId = card.dataset.id;
+      if (animeId) {
+        showAnimePreview(animeId); // call your existing modal function
+      }
+    }
+  });
 });
 
 
