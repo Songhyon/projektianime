@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const query = searchInput.value.trim();
     if (query) {
       fetchSearchResults(query);
+      
     }
   });
 
