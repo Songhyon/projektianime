@@ -1,53 +1,48 @@
 # 🎬 Anime Explorer
 
 **Projektin nimi:** Anime Explorer  
-**Tekijät:** [Matti Meikäläinen, Liisa Esimerkki]  
+**Tekijät:** Anthony Ha, Santeri Kukkanen  
 
 ---
 
 ## 🌐 Verkkolinkit
-- Julkaistu sovellus: [Anime Explorer](https://esimerkki.netlify.app)  
+- Julkaistu sovellus: [Anime Explorer](https://anexplo.netlify.app/)  
 - Projektin videoesittelyt:  
-  - [Matti Video](https://video.laurea.fi/media/matti-anime/0_example)  
-  - [Liisa Video](https://video.laurea.fi/media/liisa-anime/0_example)  
+  - [Anthony Video](https://video.laurea.fi/media/t/0_7chj5h4q)  
+  - [Santeri Video](https://video.laurea.fi/media/santeri-anime/0_example)  
 
 ---
 
 ## 🛠 Työn jakautuminen
 **Työmäärän jako:**  
-- **Matti:** front-end, hakutoiminto, top-anime-listat, CSS-tyylittely  
-- **Liisa:** recent anime -sivutus, sidebar, modal-esikatselu, API-kutsut  
+- **Santeri Kukkanen:** hakutoiminto, top-anime-listat, CSS-tyylittely, API-kutsut, sidebar, modal-esikatselu
+- **Anthony Ha:** recent anime -sivutus, modal-esikatselu, API-kutsut, CSS-tyylittely, Sivun vaihto
 
 *Yhteistyö sujui hyvin, työtehtävät jaettiin selkeästi ja kommunikaatio oli toimivaa.*
 
 ---
 
 ## 📋 Oma arvio työstä ja osaamisen kehittymisestä
-**Matti:**  
-- Onnistuin: toteuttamaan toimivan hakutoiminnon ja top-anime-listat.  
-- Parantamista: responsiivisuuden ja visuaalisten yksityiskohtien hiominen.  
-- Opin: JavaScriptin DOM-manipulaatiota, API-kutsujen tekemistä, CSS-teemoja.  
-
-**Liisa:**  
-- Onnistuin: recent anime -sivutuksen ja modal-esikatselun toteuttamisessa.  
-- Parantamista: virheiden käsittely ja lisää interaktiivisuutta.  
-- Opin: API:n hyödyntämistä, tapahtumankäsittelyä ja sivutusta JavaScriptissä.  
+**Anthony Ha:**  
+- Onnistuin: recent anime -sivutuksen ja modal-esikatselun toteuttamisessa.
+- Parantamista: virheiden käsittelyssä ja interaktiivisuuden lisäämisessä.
+- Opin: API-kutsujen tekemistä ja API:n hyödyntämistä.
+**Santeri Kukkanen:**  
+- Onnistuin: toteuttamaan toimivan hakutoiminnon ja top-anime-listat.
+- Parantamista: responsiivisuuden ja visuaalisten yksityiskohtien hiomisessa.
+- Opin: API-kutsujen tekemistä ja API:n hyödyntämistä.
 
 ---
 
-## 📝 Palaute opettajalle
+## 📋 Palaute opettajalle
 - Kurssi ja lähiopetus ovat olleet hyödyllisiä ja selkeitä.  
 
 ---
 
 ## 📑 Sisällysluettelo
 1. [Tietoja sovelluksesta](#tietoja-sovelluksesta)  
-2. [Tunnetut virheet/bugit](#tunnetut-virheetbugit)  
-3. [Teknologiat](#teknologiat)  
-4. [Asennus](#asennus)  
-5. [Lähestymistapa](#lähestymistapa)  
-6. [Kiitokset](#kiitokset)  
-7. [Lisenssi](#lisenssi)  
+2. [Teknologiat](#teknologiat)  
+3. [Asennus](#asennus)     
 
 ---
 
@@ -64,13 +59,6 @@
 
 ---
 
-## ⚠ Tunnetut virheet/bugit
-- Modal ei aina päivity heti uuden animekortin lisäämisen jälkeen.  
-- Pieniä visuaalisia ongelmia mobiilinäytöillä.  
-- API:n hidastuminen voi aiheuttaa viivettä tulosten latauksessa.  
-
----
-
 ## 🛠 Teknologiat
 - **HTML** – sivuston rakenne  
 - **CSS** – ulkoasu ja teema  
@@ -83,4 +71,4 @@
 1. Lataa kaikki tiedostot ja avaa `index.html` selaimessa.  
 2. Tai kloonaa repositorio:  
 ```bash
-git clone https://github.com/esimerkki/anime-explorer.git
+git clone https://github.com/Songhyon/projektianime.git
