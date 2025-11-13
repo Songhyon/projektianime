@@ -36,14 +36,22 @@
       <div id="recentAnime"></div>
     </div>
 
-    <!-- RIGHT SIDE (Sidebar) -->
-    <aside class="sidebar">
-      <h2>🔥 Top 5 Anime</h2>
-      <div id="sidebarTopAnime"></div>
-    </aside>
+   <!-- RIGHT SIDE (Sidebar) -->
+<aside class="sidebar">
+  <h2>🔥 Top 5 Anime</h2>
+  <div class="sidebar-filter">
+    <label for="sidebarSelect">Filter: </label>
+    <select id="sidebarSelect">
+      <option value="airing">Today</option>
+      <option value="upcoming">Weekly</option>
+      <option value="bypopularity">Monthly</option>
+      <option value="all">All Time</option>
+    </select>
   </div>
+  <div id="sidebarTopAnime"></div>
+</aside>
 
-  <!-- Scripts should be loaded LAST -->
+
   <script src="java.js"></script>
   <script src="java1.js"></script>
   <script src="sidebar.js"></script>

@@ -145,3 +145,37 @@ button:hover {
   color: #fff;
 }
 
+.sidebar-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #ff0066;
+  color: white;
+  text-align: center;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Sidebar dropdown */
+.sidebar-filter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.sidebar-filter label {
+  margin-right: 8px;
+  color: #fff;
+  font-size: 0.9em;
+}
+
+.sidebar-filter select {
+  padding: 6px;
+  border-radius: 8px;
+  border: none;
+  background-color: #1a7fad;
+  color: #f1f1f1;
+}
