@@ -1,41 +1,41 @@
 # 🎬 Anime Explorer
 
 **Projektin nimi:** Anime Explorer  
-**Tekijät:** [Matti Meikäläinen, Liisa Esimerkki]  
+**Tekijät:** Anthony Ha, Santeri Kukkanen  
 
 ---
 
 ## 🌐 Verkkolinkit
 - Julkaistu sovellus: [Anime Explorer](https://esimerkki.netlify.app)  
 - Projektin videoesittelyt:  
-  - [Matti Video](https://video.laurea.fi/media/matti-anime/0_example)  
-  - [Liisa Video](https://video.laurea.fi/media/liisa-anime/0_example)  
+  - [Anthony Video](https://video.laurea.fi/media/anthony-anime/0_example)  
+  - [Santeri Video](https://video.laurea.fi/media/santeri-anime/0_example)  
 
 ---
 
 ## 🛠 Työn jakautuminen
 **Työmäärän jako:**  
-- **Matti:** front-end, hakutoiminto, top-anime-listat, CSS-tyylittely  
-- **Liisa:** recent anime -sivutus, sidebar, modal-esikatselu, API-kutsut  
+- **Anthony Ha:** front-end, hakutoiminto, top-anime-listat, CSS-tyylittely  
+- **Santeri Kukkanen:** recent anime -sivutus, sidebar, modal-esikatselu, API-kutsut  
 
 *Yhteistyö sujui hyvin, työtehtävät jaettiin selkeästi ja kommunikaatio oli toimivaa.*
 
 ---
 
 ## 📋 Oma arvio työstä ja osaamisen kehittymisestä
-**Matti:**  
+**Anthony Ha:**  
 - Onnistuin: toteuttamaan toimivan hakutoiminnon ja top-anime-listat.  
 - Parantamista: responsiivisuuden ja visuaalisten yksityiskohtien hiominen.  
 - Opin: JavaScriptin DOM-manipulaatiota, API-kutsujen tekemistä, CSS-teemoja.  
 
-**Liisa:**  
+**Santeri Kukkanen:**  
 - Onnistuin: recent anime -sivutuksen ja modal-esikatselun toteuttamisessa.  
 - Parantamista: virheiden käsittely ja lisää interaktiivisuutta.  
-- Opin: API:n hyödyntämistä, tapahtumankäsittelyä ja sivutusta JavaScriptissä.  
+- Opin: API:n hyödyntämistä, tapahtumankäsittelyä ja sivutusta JavaScriptissä.
 
 ---
 
-## 📝 Palaute opettajalle
+## 📋 Palaute opettajalle
 - Kurssi ja lähiopetus ovat olleet hyödyllisiä ja selkeitä.  
 
 ---
