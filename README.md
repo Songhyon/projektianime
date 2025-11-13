@@ -64,6 +64,7 @@
 - **CSS** – ulkoasu ja teema  
 - **JavaScript (Vanilla)** – hakutoiminnot, recent anime -sivutus, modal  
 - **Jikan API** – anime-datan hakeminen MyAnimeLististä  
+- **Apuvälineet** - Käytimme projektissa apuvälineinä ChatGPT:tä, w3schools ja https://jikan.moe/ APi:a
 
 ---
 
