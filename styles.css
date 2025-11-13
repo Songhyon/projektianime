@@ -284,3 +284,33 @@ select:focus{ box-shadow:0 0 0 3px rgba(26,125,173,0.14); }
   .search-section input[type="text"]{ width:100%; }
   #results{ justify-content:center; }
 }
+
+/* Show More button inside anime-card */
+.anime-card {
+  position: relative; /* ensure absolute children are positioned relative to card */
+}
+
+.anime-card .show-more-btn {
+  position: absolute;
+  bottom: 12px; /* distance from bottom */
+  right: 12px;  /* distance from right corner */
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  border: none;
+  border-radius: 6px;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.anime-card .show-more-btn:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.anime-card {
+  position: relative;
+  padding-bottom: 40px; /* extra space for the button */
+}
