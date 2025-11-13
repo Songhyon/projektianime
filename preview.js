@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("previewModal");
   const modalBody = document.getElementById("modalBody");
@@ -30,20 +29,15 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   function resolveAnimeIdFromCard(card) {
-    // 1) dataset.id
     if (card.dataset && card.dataset.id) return card.dataset.id;
-    // 2) attribute data-id
     if (card.getAttribute && card.getAttribute("data-id")) return card.getAttribute("data-id");
-    // 3) check child elements for data-id (img or link)
     const childWithId = card.querySelector("[data-id]");
     if (childWithId && childWithId.dataset && childWithId.dataset.id) return childWithId.dataset.id;
-    // 4) check img data-mal-id attribute (if you used that)
     const img = card.querySelector("img");
     if (img && img.getAttribute("data-mal-id")) return img.getAttribute("data-mal-id");
     return null;
   }
 
-  // Show modal and fetch details
   function showAnimePreview(animeId) {
     modal.style.display = "flex";
     modalBody.innerHTML = `<p>Loading anime details...</p>`;
@@ -68,7 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
 
-  // Build modal HTML from anime full object
   function renderAnimeModal(anime) {
     const genres = (anime.genres || []).map((g) => g.name).join(", ") || "N/A";
     const studios = (anime.studios || []).map((s) => s.name).join(", ") || "N/A";
@@ -90,7 +83,6 @@ document.addEventListener("DOMContentLoaded", () => {
         <p><strong>Genres:</strong> ${escapeHtml(genres)}</p>
         <p class="synopsis">${escapeHtml(anime.synopsis ?? "No description available.")}</p>
         ${trailerEmbed}
-        <p style="margin-top:12px;"><a href="${trailerUrl || '#'}" target="_blank" rel="noopener" ${!trailerUrl ? 'onclick="return false;"' : ''}>Open trailer in new tab</a></p>
       </div>
     `;
   }
@@ -100,29 +92,6 @@ document.addEventListener("DOMContentLoaded", () => {
     modalBody.innerHTML = "";
   }
 
-  // Helper: create an iframe embed for YouTube links (safe mild parsing)
-  function createYouTubeEmbed(url) {
-    // Simple extraction of video id for youtube links
-    try {
-      const u = new URL(url);
-      let id = null;
-      if (u.hostname.includes("youtube.com")) {
-        id = u.searchParams.get("v");
-      } else if (u.hostname.includes("youtu.be")) {
-        id = u.pathname.slice(1);
-      }
-      if (!id) return "";
-      return `
-        <div class="trailer-wrap" style="margin-top:12px;">
-          <iframe width="100%" height="315" src="https://www.youtube.com/embed/${encodeURIComponent(id)}" title="Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-      `;
-    } catch (e) {
-      return "";
-    }
-  }
-
-  // simple escape for text content/html attributes
   function escapeHtml(s = "") {
     return String(s)
       .replace(/&/g, "&amp;")
