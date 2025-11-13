@@ -1,84 +1,86 @@
-🎬 Anime Explorer
+# 🎬 Anime Explorer
 
-Anime Explorer on verkkosovellus, jonka avulla käyttäjät voivat etsiä, selata ja tutkia animeja. Sovellus näyttää top-anime-listoja, kauden uusimmat animet sivutettuna ja yksityiskohtaiset esikatselut modaalissa.
+**Projektin nimi:** Anime Explorer  
+**Tekijät:** [Matti Meikäläinen, Liisa Esimerkki]  
 
-🌟 Ominaisuudet
+---
 
-Animehaku nimellä ja reaaliaikaisilla tuloksilla.
+## 🌐 Verkkolinkit
+- Julkaistu sovellus: [Anime Explorer](https://esimerkki.netlify.app)  
+- Projektin videoesittelyt:  
+  - [Matti Video](https://video.laurea.fi/media/matti-anime/0_example)  
+  - [Liisa Video](https://video.laurea.fi/media/liisa-anime/0_example)  
 
-Top-anime-listat, suodatettavissa Airing, Upcoming tai Popularity.
+---
 
-Kauden uusimmat animet sivutettuna (Seuraava/Edellinen sivu).
+## 🛠 Työn jakautuminen
+**Työmäärän jako:**  
+- **Matti:** front-end, hakutoiminto, top-anime-listat, CSS-tyylittely  
+- **Liisa:** recent anime -sivutus, sidebar, modal-esikatselu, API-kutsut  
 
-Anime-esikatselumodaali yksityiskohtaisille tiedoille.
+*Yhteistyö sujui hyvin, työtehtävät jaettiin selkeästi ja kommunikaatio oli toimivaa.*
 
-Sidebar top 5 animeille aikavälin mukaan.
+---
 
-Täysin responsiivinen ja moderni tummateemainen design.
+## 📋 Oma arvio työstä ja osaamisen kehittymisestä
+**Matti:**  
+- Onnistuin: toteuttamaan toimivan hakutoiminnon ja top-anime-listat.  
+- Parantamista: responsiivisuuden ja visuaalisten yksityiskohtien hiominen.  
+- Opin: JavaScriptin DOM-manipulaatiota, API-kutsujen tekemistä, CSS-teemoja.  
 
-🖥️ Demo
+**Liisa:**  
+- Onnistuin: recent anime -sivutuksen ja modal-esikatselun toteuttamisessa.  
+- Parantamista: virheiden käsittely ja lisää interaktiivisuutta.  
+- Opin: API:n hyödyntämistä, tapahtumankäsittelyä ja sivutusta JavaScriptissä.  
 
+---
 
-(Korvaa oikealla kuvakaappauksella tai GIFillä)
+## 📝 Palaute opettajalle
+- Kurssi ja lähiopetus ovat olleet hyödyllisiä ja selkeitä.  
 
-🛠️ Käytetyt teknologiat
+---
 
-HTML5 – Sivun rakenne.
+## 📑 Sisällysluettelo
+1. [Tietoja sovelluksesta](#tietoja-sovelluksesta)  
+2. [Tunnetut virheet/bugit](#tunnetut-virheetbugit)  
+3. [Teknologiat](#teknologiat)  
+4. [Asennus](#asennus)  
+5. [Lähestymistapa](#lähestymistapa)  
+6. [Kiitokset](#kiitokset)  
+7. [Lisenssi](#lisenssi)  
 
-CSS3 – Tyylit ja responsiivisuus.
+---
 
-JavaScript (Vanilla) – Datan haku, dynaaminen renderöinti ja sivutus.
+## 📌 Tietoja sovelluksesta
+**Anime Explorer** on web-sovellus, jonka avulla käyttäjät voivat hakea, selata ja tutkia animeja.
 
-Jikan API
- – Anime-data MyAnimeListista.
+**Ominaisuudet:**  
+- Haku animeille nimellä.  
+- Top-anime-listat: Today, Weekly, Monthly.  
+- Recent Anime -osio sivutettuna (Next/Prev painikkeet).  
+- Anime-esikatselumodaali yksityiskohtaisia tietoja varten.  
+- Sidebar top 5 animeille aikavälin mukaan.  
+- Responsiivinen ja moderni tummateemainen ulkoasu.  
 
-🚀 Käyttöönotto
-1. Lataa repositorio
-git clone https://github.com/kayttaja/anime-explorer.git
-cd anime-explorer
+---
 
-2. Avaa projekti
+## ⚠ Tunnetut virheet/bugit
+- Modal ei aina päivity heti uuden animekortin lisäämisen jälkeen.  
+- Pieniä visuaalisia ongelmia mobiilinäytöillä.  
+- API:n hidastuminen voi aiheuttaa viivettä tulosten latauksessa.  
 
-Avaa index.html selaimessasi.
+---
 
-3. Käytä sovellusta
+## 🛠 Teknologiat
+- **HTML** – sivuston rakenne  
+- **CSS** – ulkoasu ja teema  
+- **JavaScript (Vanilla)** – hakutoiminnot, recent anime -sivutus, modal  
+- **Jikan API** – anime-datan hakeminen MyAnimeLististä  
 
-Käytä hakupalkkia animejen etsimiseen.
+---
 
-Käytä pudotusvalikkoja top-animejen katseluun.
-
-Selaa Recent Anime -osiota ja käytä Next/Prev sivuja.
-
-Klikkaa Show More -painiketta nähdäksesi yksityiskohtaisen esikatselun.
-
-📂 Tiedostorakenne
-anime-explorer/
-│
-├─ index.html          # Pää HTML-tiedosto
-├─ styles.css          # Kaikki CSS-tyylit
-├─ java.js             # Pää JavaScript hakuun & top animeen
-├─ java1.js            # Recent anime ja sivutus
-├─ sidebar.js          # Sidebar top anime -suodatin
-├─ preview.js          # Modal-esikatselu
-└─ README.md           # Projekti-dokumentaatio
-
-🔧 Muokattavuus
-
-Vaihda kausi/vuosi uusimmille animeille java1.js tiedostossa:
-
-fetch(`https://api.jikan.moe/v4/seasons/2025/fall?page=${page}&limit=${perPage}`)
-
-
-Muuta animejen määrä per sivu muuttujalla perPage.
-
-Muokkaa teeman värejä styles.css tiedostossa :root muuttujien avulla.
-
-⚡ Tulevat parannukset
-
-Lisää numeroidut sivunapit suoraan sivun valitsemiseen.
-
-Lisää suosikkilista paikalliseen tallennukseen.
-
-Mahdollisuus lajitella esim. score, episodes.
-
-Kuvien lazy loading suorituskyvyn parantamiseksi.
+## ⚡ Asennus
+1. Lataa kaikki tiedostot ja avaa `index.html` selaimessa.  
+2. Tai kloonaa repositorio:  
+```bash
+git clone https://github.com/esimerkki/anime-explorer.git
