@@ -1,9 +1,3 @@
-// sidebar.js
-// Fetches and displays a small Top N list in the sidebar.
-// Expects:
-//  - <select id="sidebarSelect"> for filter (airing/upcoming/bypopularity/all)
-//  - <div id="sidebarTopAnime"> where the list will be rendered
-
 document.addEventListener("DOMContentLoaded", () => {
   const sidebarDiv = document.getElementById("sidebarTopAnime");
   const sidebarSelect = document.getElementById("sidebarSelect");
