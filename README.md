@@ -9,7 +9,7 @@
 - Julkaistu sovellus: [Anime Explorer](https://anexplo.netlify.app/)  
 - Projektin videoesittelyt:  
   - [Anthony Video](https://video.laurea.fi/media/t/0_7chj5h4q)  
-  - [Santeri Video](https://video.laurea.fi/media/santeri-anime/0_example)  
+  - [Santeri Video](https://video.laurea.fi/media/Projekti%202a%3A%20AJAX-sovellus%20REST%20APIa%20hy%C3%B6dynt%C3%A4en%20Santeri%20Kukkanen/0_npggav7b)  
 
 ---
 
