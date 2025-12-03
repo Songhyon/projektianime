@@ -18,29 +18,33 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // ----------------------------
-    // Handle search button click
+    // Handle search button click jquery-version
     // ----------------------------
-    searchBtn.addEventListener("click", () => {
-        const query = searchInput.value.trim();
+    $("#searchBtn").on("click", function () {
+        const query = $("#searchInput").val().trim();
         if (query) fetchSearchResults(query);
     });
 
     // ----------------------------
-    // Fetch top anime
+    // Fetch top anime Axios-version
     // ----------------------------
     function fetchTopAnime(filterType) {
         resultsDiv.innerHTML = `<p>Loading top anime...</p>`;
-        fetch(`https://api.jikan.moe/v4/top/anime?filter=${filterType}&limit=10`)
-            .then(res => res.json())
-            .then(data => {
-                if (data && data.data) displayResults(data.data, resultsDiv);
-                else resultsDiv.innerHTML = "<p>No results found.</p>";
-            })
-            .catch(err => {
-                console.error("Error fetching top anime:", err);
-                resultsDiv.innerHTML = "<p>Failed to load top anime 😢</p>";
-            });
-    }
+        axios.get("https://api.jikan.moe/v4/top/anime", {
+            params: { filter: filterType, limit: 10 }
+        })
+        .then(response => {
+            if (response.data && response.data.data) {
+                displayResults(response.data.data, resultsDiv);
+            } else {
+                resultsDiv.innerHTML = "<p>No results found.</p>";
+            }
+        })
+        .catch(err => {
+            console.error("Axios error:", err);
+            resultsDiv.innerHTML = "<p>Failed to load top anime 😢</p>";
+        });
+            }
 
     // ----------------------------
     // Search anime by title

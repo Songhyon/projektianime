@@ -5,24 +5,108 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Anime Explorer</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="loader.css" />
+  <link rel="stylesheet" href="seacrh.css" />
+
+  <!-- Tailwind, jQuery & Axios -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
-<body>
-  <h1>Anime Explorer</h1>
+<div id="loader-screen">
+<div class="container">
+  <div class="loader">
+      <span>A</span>
+      <span>N</span>
+      <span>I</span>
+      <span>M</span>
+      <span>E</span>
+      <span>E</span>
+      <span>X</span>
+    </div>
+</div>
+</div>
 
-  <div class="layout">
+<body class="text-white bg-black">
+
+  <h1 class="text-center text-4xl font-bold my-6 text-pink-500">AnimeEx</h1>
+
+  <div class="layout flex gap-6 px-4">
     <!-- LEFT SIDE (Main Content) -->
-    <div class="main-content">
+    <div class="main-content flex-1">
+
       <!-- Search input -->
-      <div class="search-section">
-        <input type="text" id="searchInput" placeholder="Search anime..." />
-        <button id="searchBtn">Search</button>
-      </div>
+<!-- 🌌 Cosmic Search UI -->
+<div id="search-container">
+  
+  <div class="nebula"></div>
+  <div class="starfield"></div>
+  <div class="cosmic-dust"></div>
+  <div class="cosmic-dust"></div>
+  <div class="cosmic-dust"></div>
+  <div class="stardust"></div>
+  <div class="cosmic-ring"></div>
+
+  <div id="main">
+    
+    <!-- IMPORTANT: keep ID searchInput so JS continues working -->
+    <input
+      id="searchInput"
+      class="input"
+      name="text"
+      type="text"
+      placeholder="search your anime..."
+    />
+
+    <div id="input-mask"></div>
+    <div id="cosmic-glow"></div>
+    <div class="wormhole-border"></div>
+
+    <div id="wormhole-icon">
+      <svg stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="#a9c7ff" fill="none" height="24" width="24" viewBox="0 0 24 24">
+        <circle r="10" cy="12" cx="12"></circle>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+        <path d="M2 12h20"></path>
+      </svg>
+    </div>
+
+    <!-- IMPORTANT: Search button needs id searchBtn so JS still works -->
+    <div id="searchBtn" class="cursor-pointer">
+      <svg
+        stroke-linejoin="round"
+        stroke-linecap="round"
+        stroke-width="2"
+        stroke="url(#cosmic-search)"
+        fill="none"
+        height="24"
+        width="24"
+        viewBox="0 0 24 24"
+      >
+        <circle r="8" cy="11" cx="11"></circle>
+        <line y2="16.65" x2="16.65" y1="21" x1="21"></line>
+        <defs>
+          <linearGradient gradientTransform="rotate(45)" id="cosmic-search">
+            <stop stop-color="#a9c7ff" offset="0%"></stop>
+            <stop stop-color="#6e8cff" offset="100%"></stop>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+
+  </div>
+</div>
+
 
       <!-- Dropdown for top anime -->
-      <div class="top-section">
-        <label for="rankingSelect">Show top anime: </label>
-        <select id="rankingSelect">
+      <div class="top-section flex items-center gap-2 mb-4">
+        <label for="rankingSelect" class="text-gray-300">Show top anime: </label>
+
+        <select 
+          id="rankingSelect"
+          class="px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-gray-100 
+                 focus:ring-2 focus:ring-pink-500"
+        >
           <option value="airing">Today</option>
           <option value="upcoming">Weekly</option>
           <option value="bypopularity">Monthly</option>
@@ -32,32 +116,42 @@
       <!-- Results container -->
       <div id="results"></div>
 
-      <h2>Recent Anime</h2>
+      <h2 class="text-2xl font-semibold mt-8 mb-3 text-pink-400">Recent Anime</h2>
       <div id="recentAnime"></div>
       <!-- Pagination buttons will be dynamically inserted here by JS -->
 
     </div>
 
     <!-- RIGHT SIDE (Sidebar) -->
-    <aside class="sidebar">
-      <h2>Top 5 Anime</h2>
-      <div class="sidebar-filter">
-        <label for="sidebarSelect">Filter: </label>
-        <select id="sidebarSelect">
+    <aside class="sidebar bg-gray-900 p-4 rounded-xl shadow-xl w-72">
+      <h2 class="text-center text-xl font-bold text-pink-500 mb-3">Top 5 Anime</h2>
+
+      <div class="sidebar-filter flex items-center gap-3 mb-4">
+        <label for="sidebarSelect" class="text-gray-300">Filter:</label>
+
+        <select 
+          id="sidebarSelect"
+          class="px-2 py-2 bg-gray-800 border border-gray-700 rounded-lg text-gray-100
+                 focus:ring-2 focus:ring-pink-500"
+        >
           <option value="airing">Today</option>
           <option value="upcoming">Weekly</option>
           <option value="bypopularity">Monthly</option>
           <option value="all">All Time</option>
         </select>
       </div>
+
       <div id="sidebarTopAnime"></div>
     </aside>
   </div>
 
   <!-- Preview Modal -->
-  <div id="previewModal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
+  <div 
+    id="previewModal" 
+    class="modal fixed inset-0 bg-black/80 hidden justify-center items-center p-4"
+  >
+    <div class="modal-content bg-gray-900 p-5 rounded-xl max-w-xl w-full relative">
+      <span class="close text-pink-500 text-3xl cursor-pointer absolute right-5 top-4">&times;</span>
       <div id="modalBody">Loading...</div>
     </div>
   </div>
@@ -67,5 +161,6 @@
   <script src="java1.js"></script>
   <script src="sidebar.js"></script>
   <script src="preview.js"></script>
+  <script src="loader.js"></script>
 </body>
 </html>
