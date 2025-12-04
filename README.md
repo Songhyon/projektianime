@@ -6,70 +6,90 @@
 ---
 
 ## 🌐 Verkkolinkit
-- Julkaistu sovellus: [Anime Explorer](https://anexplo.netlify.app/)  
+- Julkaistu sovellus: 🔗 https://anexplo.netlify.app/
+- GitHub repository: 🔗 https://github.com/Songhyon/projektianime
 - Projektin videoesittelyt:  
-  - [Anthony Video](https://video.laurea.fi/media/t/0_7chj5h4q)  
-  - [Santeri Video](https://video.laurea.fi/media/Projekti%202a%3A%20AJAX-sovellus%20REST%20APIa%20hy%C3%B6dynt%C3%A4en%20Santeri%20Kukkanen/0_npggav7b)  
+  - 🔹 Anthony Video: https://video.laurea.fi/media/t/0_8zhv6s5o
+  - 🔹 Santeri Video:   
 
 ---
 
 ## 🛠 Työn jakautuminen
-**Työmäärän jako:**  
-- **Santeri Kukkanen:** hakutoiminto, top-anime-listat, CSS-tyylittely, API-kutsut, sidebar, modal-esikatselu
-- **Anthony Ha:** recent anime -sivutus, modal-esikatselu, API-kutsut, CSS-tyylittely, Sivun vaihto
 
-*Yhteistyö sujui hyvin, työtehtävät jaettiin selkeästi ja kommunikaatio oli toimivaa.*
+**Santeri Kukkanen**  
+- Hakutoiminto  
+- Top-anime-listat  
+- CSS-teema, UI-efektit  
+- Sidebar ja modal-esikatselu  
+- API-kutsut  
 
----
+**Anthony Ha**  
+- Recent anime -sivutus  
+- Modal-esikatselu  
+- API-kutsut
+- CSS-tyylittely ja sivunvaihto  
+- UI-efektit 
 
-## 📋 Oma arvio työstä ja osaamisen kehittymisestä
-**Anthony Ha:**  
-- Onnistuin: recent anime -sivutuksen ja modal-esikatselun toteuttamisessa.
-- Parantamista: virheiden käsittelyssä ja interaktiivisuuden lisäämisessä.
-- Opin: API-kutsujen tekemistä ja API:n hyödyntämistä.
-**Santeri Kukkanen:**  
-- Onnistuin: toteuttamaan toimivan hakutoiminnon ja top-anime-listat.
-- Parantamista: responsiivisuuden ja visuaalisten yksityiskohtien hiomisessa.
-- Opin: API-kutsujen tekemistä ja API:n hyödyntämistä.
-
----
-
-## 📋 Palaute opettajalle
-- Kurssi ja lähiopetus ovat olleet hyödyllisiä ja selkeitä.  
-
----
-
-## 📑 Sisällysluettelo
-1. [Tietoja sovelluksesta](#tietoja-sovelluksesta)  
-2. [Teknologiat](#teknologiat)  
-3. [Asennus](#asennus)     
+*Työ jaettiin tasaisesti ja kommunikointi sujui hyvin.*
 
 ---
 
 ## 📌 Tietoja sovelluksesta
-**Anime Explorer** on web-sovellus, jonka avulla käyttäjät voivat hakea, selata ja tutkia animeja.
 
-**Ominaisuudet:**  
-- Haku animeille nimellä.  
-- Top-anime-listat: Today, Weekly, Monthly.  
-- Recent Anime -osio sivutettuna (Next/Prev painikkeet).  
-- Anime-esikatselumodaali yksityiskohtaisia tietoja varten.  
-- Sidebar top 5 animeille aikavälin mukaan.  
-- Responsiivinen ja moderni tummateemainen ulkoasu.  
+Anime Explorer on JavaScript-sovellus, joka hakee MyAnimeList -tietoja Jikan API:n avulla ja esittää ne modernissa käyttöliittymässä.
+
+**Ominaisuudet**
+- 🔎 Animehaku
+- ⭐ Top Anime: Today / Weekly / Monthly / All Time
+- 🧾 Recent Anime sivutuksella (Next / Prev)
+- 🎥 Modal-esikatselu: synopsis, score, studio, genre, kuva & traileri
+- 🧊 Sidebar Top 5 -listaus
+- 🎨 Tumma teema, responsiivinen layout ja UI-efektit
 
 ---
 
-## 🛠 Teknologiat
-- **HTML** – sivuston rakenne  
-- **CSS** – ulkoasu ja teema  
-- **JavaScript (Vanilla)** – hakutoiminnot, recent anime -sivutus, modal  
-- **Jikan API** – anime-datan hakeminen MyAnimeLististä  
-- **Apuvälineet** - Käytimme projektissa apuvälineinä ChatGPT:tä, w3schools ja https://jikan.moe/ APi:a
+## 🧰 Teknologiat
+
+| Teknologia | Käyttötarkoitus |
+|-----------|----------------|
+| HTML | Sivuston rakenne |
+| CSS + Custom UI Effects | Ulkoasu, loader, animaatiot |
+| **Tailwind CSS** | UI-kirjasto, responsiivinen layout |
+| **JavaScript ES6** | Sovelluslogiikka |
+| **jQuery** | DOM-skriptit ja tapahtumakäsittely |
+| **Axios** | AJAX API -kutsut |
+| **Jikan REST API** | Anime-data MyAnimeLististä |
+| **Uiverse.io UI Components (mukautettu)** | Loader ja UI-efekteihin inspiraatiota |
+
+
+**Apuvälineet / lähteet:**  
+- Jikan REST API dokumentaatio — https://jikan.moe
+- UI-efekteihin inspiraatiota — https://uiverse.io
+- ChatGPT
+- W3Schools — HTML/CSS/JS perusteet
+
+
+---
+
+## 📋 Oma arvio työstä
+
+**Anthony:**  
++ Onnistuin recent-sivutuksen ja modaalin kanssa  
++ Opin API-kutsujen hallintaa ja virheiden käsittelyä  
+- Parannettavaa: Interaktioiden jatkokehitys  
+
+**Santeri:**  
++ Onnistuin haussa ja Top-listojen logiikassa  
++ Opin API-kutsujen käsittelyä ja UI-rakenteen suunnittelua  
+- Parannettavaa: responsiivisuuden optimointi  
 
 ---
 
 ## ⚡ Asennus
-1. Lataa kaikki tiedostot ja avaa `index.html` selaimessa.  
-2. Tai kloonaa repositorio:  
+
+Lataa projekti ja avaa `index.html` suoraan selaimessa  
+tai kloonaa GitHubista:
+
 ```bash
 git clone https://github.com/Songhyon/projektianime.git
+cd projektianime

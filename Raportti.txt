@@ -1,0 +1,33 @@
+PROJEKTIRAPORTTI — ANIME EXPLORER
+--------------------------------------------------
+
+Projektin kuvaus:
+Anime Explorer on JavaScript-pohjainen sovellus, joka hakee anime-tietoja Jikan REST -rajapinnasta 
+ja esittää tulokset selkeänä, modernina ja responsiivisena käyttöliittymänä. 
+Sovellus tarjoaa hakutoiminnon, top-listaukset, sivupalkin Top 5 -listan, modal-esikatselun ja sivutuksen uusimmille animekausille.
+
+Käytetyt teknologiat:
+- jQuery – DOM-tapahtumat ja interaktio
+- Axios – AJAX-kutsut ulkoiseen API:in
+- Tailwind CSS – visuaalinen ulkoasu ja UI-komponentit
+- Custom CSS – animaatiot ja käyttöliittymäefektit
+- Jikan REST API – anime-data
+
+Keskeiset toiminnot:
+- Anime-haku nimen perusteella
+- Suosituimmat anime-listaukset suodattimilla
+- Sidebar Top 5 anime -lista
+- Modal-esikatselu trailerin kanssa
+- Pagination uusimmille animejulkaisuille
+- Loader-animaatio API-kutsujen aikana
+- Responsiivinen toteutus mobiiliin ja desktopiin
+
+Haasteet ja ratkaisut:
+API:n vasteaika vaihteli, mikä ratkaistiin toteuttamalla loader-komponentti. 
+Modal-esikatselu vaati datarakenteiden mukauttamista ja turvallisen HTML-renderöinnin (escapeHtml), jotta sisältö pysyy siistinä ja turvallisena.
+
+Arvio projektista:
+Projekti täyttää kurssivaatimukset ja ylittää ne visuaalisten UI-tehosteiden, trailer-esikatselun ja pagination-toiminnallisuuksien myötä. 
+Koodi on modulaarinen, selkeä ja helposti jatkokehitettävissä.
+
+--------------------------------------------------
