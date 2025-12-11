@@ -5,50 +5,62 @@ document.addEventListener("DOMContentLoaded", () => {
     const rankingSelect = document.getElementById("rankingSelect");
     const recentContainer = document.getElementById("recentAnime");
 
-    // ----------------------------
+    // -------------------------------------
     // Load default top anime (Airing)
-    // ----------------------------
+    // -------------------------------------
     fetchTopAnime("airing");
 
-    // ----------------------------
-    // Handle dropdown change
-    // ----------------------------
+    // -------------------------------------
+    // Dropdown change for ranking filter
+    // -------------------------------------
     rankingSelect.addEventListener("change", (e) => {
         fetchTopAnime(e.target.value);
     });
 
-    // ----------------------------
-    // Handle search button click jquery-version
-    // ----------------------------
+    // -------------------------------------
+    // Search button (jQuery)
+    // -------------------------------------
     $("#searchBtn").on("click", function () {
         const query = $("#searchInput").val().trim();
         if (query) fetchSearchResults(query);
     });
 
-    // ----------------------------
-    // Fetch top anime Axios-version
-    // ----------------------------
+    // -------------------------------------
+    // Clear Results button jQuery
+    // -------------------------------------
+    $("<button id='clearBtn' class='mt-2 px-3 py-1 bg-pink-600 rounded'>Clear Results</button>")
+        .insertAfter("#searchBtn")
+        .hide()
+        .fadeIn(300);
+
+    $("#clearBtn").on("click", () => {
+        $(resultsDiv).fadeOut(200, () => {
+            resultsDiv.innerHTML = "<p>Results cleared.</p>";
+            $(resultsDiv).fadeIn(200);
+        });
+    });
+
+    // -------------------------------------
+    // Fetch TOP Anime (AXIOS)
+    // -------------------------------------
     function fetchTopAnime(filterType) {
         resultsDiv.innerHTML = `<p>Loading top anime...</p>`;
         axios.get("https://api.jikan.moe/v4/top/anime", {
             params: { filter: filterType, limit: 10 }
         })
         .then(response => {
-            if (response.data && response.data.data) {
-                displayResults(response.data.data, resultsDiv);
-            } else {
-                resultsDiv.innerHTML = "<p>No results found.</p>";
-            }
+            if (response.data?.data) displayResults(response.data.data, resultsDiv);
+            else resultsDiv.innerHTML = "<p>No results found.</p>";
         })
         .catch(err => {
             console.error("Axios error:", err);
             resultsDiv.innerHTML = "<p>Failed to load top anime 😢</p>";
         });
-            }
+    }
 
-    // ----------------------------
-    // Search anime by title
-    // ----------------------------
+    // -------------------------------------
+    // SEARCH Anime (FETCH) 
+    // -------------------------------------
     function fetchSearchResults(query) {
         resultsDiv.innerHTML = `<p>Searching for "${query}"...</p>`;
         fetch(`https://api.jikan.moe/v4/anime?q=${encodeURIComponent(query)}&limit=10`)
@@ -63,54 +75,59 @@ document.addEventListener("DOMContentLoaded", () => {
             });
     }
 
-    // ----------------------------
-    // Display anime cards
-    // ----------------------------
+    // -------------------------------------
+    // Display anime cards (jQuery upgraded)
+    // -------------------------------------
     function displayResults(animeList, container) {
         container.innerHTML = "";
+
         animeList.forEach(anime => {
-            const card = document.createElement("div");
-            card.classList.add("anime-card");
-            card.dataset.id = anime.mal_id;
-            card.innerHTML = `
-                <img src="${anime.images.jpg.image_url}" alt="${anime.title}" width="150">
-                <h3>${anime.title}</h3>
-                <p><strong>Score:</strong> ${anime.score ?? "N/A"}</p>
-                <p>Episodes: ${anime.episodes ?? "N/A"}</p>
-                <p>${anime.synopsis ? anime.synopsis.slice(0, 120) + "..." : "No description available."}</p>
-                <button class="show-more-btn">Show More</button>
-            `;
-            container.appendChild(card);
+            const card = $(`
+                <div class="anime-card" data-id="${anime.mal_id}" style="display:none;">
+                    <img src="${anime.images.jpg.image_url}" alt="${anime.title}" width="150">
+                    <h3>${anime.title}</h3>
+                    <p><strong>Score:</strong> ${anime.score ?? "N/A"}</p>
+                    <p>Episodes: ${anime.episodes ?? "N/A"}</p>
+                    <p>${anime.synopsis ? anime.synopsis.slice(0, 120) + "..." : "No description available."}</p>
+                    <button class="show-more-btn">Show More</button>
+                </div>
+            `);
+
+            $(container).append(card);
+
+            // Smooth animation
+            card.fadeIn(250);
+
+            // Hover effect
+            card.hover(
+                function () { $(this).css("transform", "scale(1.05)"); },
+                function () { $(this).css("transform", "scale(1)"); }
+            );
         });
     }
 
-    // ----------------------------
-    // Event delegation for Show More buttons
-    // ----------------------------
+    // -------------------------------------
+    // Event delegation for Show More
+    // -------------------------------------
     document.body.addEventListener("click", (e) => {
         if (e.target.classList.contains("show-more-btn")) {
             const card = e.target.closest(".anime-card");
             const animeId = card.dataset.id;
-            if (animeId) {
-                showAnimePreview(animeId); // Call your existing modal function
-            }
+            if (animeId) showAnimePreview(animeId);
         }
     });
 
-    // =========================
-    // Recent seasonal anime with pagination
-    // =========================
-    const perPage = 12; // Number of anime per page
+    // -------------------------------
+    // RECENT ANIME
+    // -------------------------------
+    const perPage = 12;
     let currentPage = 1;
 
-    // Create pagination buttons dynamically
     const paginationDiv = document.createElement("div");
     paginationDiv.id = "recentPagination";
     paginationDiv.style.display = "flex";
     paginationDiv.style.justifyContent = "center";
-    paginationDiv.style.alignItems = "center";
     paginationDiv.style.gap = "10px";
-    paginationDiv.style.marginTop = "12px";
     recentContainer.after(paginationDiv);
 
     const prevBtn = document.createElement("button");
@@ -127,26 +144,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function fetchRecentAnime(page = 1) {
         recentContainer.innerHTML = `<p>Loading recent anime...</p>`;
-        fetch(`https://api.jikan.moe/v4/seasons/2025/fall?page=${page}&limit=${perPage}`)
-            .then(res => res.json())
-            .then(data => {
-                if (data && data.data) {
-                    displayResults(data.data, recentContainer);
-                    currentPage = page;
-                    pageIndicator.textContent = currentPage;
-                    prevBtn.disabled = currentPage === 1;
-                    nextBtn.disabled = !data.pagination.has_next_page;
-                } else {
-                    recentContainer.innerHTML = "<p>No recent anime found.</p>";
-                }
-            })
-            .catch(err => {
-                console.error('Error fetching recent anime:', err);
-                recentContainer.innerHTML = "<p>Failed to load recent anime 😢</p>";
-            });
+
+        axios.get("https://api.jikan.moe/v4/seasons/2025/fall", {
+            params: { page: page, limit: perPage }
+        })
+        .then(res => {
+            const data = res.data;
+            if (data?.data) {
+                displayResults(data.data, recentContainer);
+                currentPage = page;
+                pageIndicator.textContent = currentPage;
+                prevBtn.disabled = currentPage === 1;
+                nextBtn.disabled = !data.pagination.has_next_page;
+            } else {
+                recentContainer.innerHTML = "<p>No recent anime found.</p>";
+            }
+        })
+        .catch(err => {
+            console.error("Axios recent error:", err);
+            recentContainer.innerHTML = "<p>Failed to load recent anime 😢</p>";
+        });
     }
 
-    // Pagination buttons events
     prevBtn.addEventListener("click", () => {
         if (currentPage > 1) fetchRecentAnime(currentPage - 1);
     });
@@ -155,6 +174,5 @@ document.addEventListener("DOMContentLoaded", () => {
         fetchRecentAnime(currentPage + 1);
     });
 
-    // Initial fetch
     fetchRecentAnime();
 });
